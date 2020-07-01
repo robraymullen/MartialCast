@@ -1,0 +1,9 @@
+.panelTitle{
+    border: 1px solid black;
+    background-color: #28a745;
+    cursor: pointer;
+}
+
+.categoryTitle{
+    padding-left: 10px;
+}

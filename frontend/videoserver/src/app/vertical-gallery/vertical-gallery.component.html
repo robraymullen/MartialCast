@@ -1,0 +1,22 @@
+<div id="panel-group">
+  <div>
+    <h2>Related Videos</h2>
+  </div>
+  <div class="panel panel-default" *ngFor="let item of items; let i = index">
+    <div class="panel-heading panelTitle" (click) = "current = i">
+      <h5 class="panel-title categoryTitle">
+       <i class='glyphicon' 
+          [class.glyphicon-chevron-right] = "i != current"
+          [class.glyphicon-chevron-down] = "i == current" ></i>   {{item.title}}
+        </h5>
+    </div>
+     <div id="collapse1" class="panel-collapse" [class.collapse]='current != i'>
+      <div class="panel-body">
+          <div *ngFor="let video of item.videos">
+              <app-video-preview  [video]="video" [isVertical]="true"></app-video-preview>
+          </div>
+          
+      </div>
+    </div>
+  </div>
+</div>
