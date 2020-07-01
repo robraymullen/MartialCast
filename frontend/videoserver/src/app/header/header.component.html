@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg navbar-dark navBarCustom">
+  <div>
+      <a  href="" class=""  [routerLink]="['']">
+          <span class="navbar-brand fa fa-home fa-4x" id="navIcon"></span>
+          
+        </a>
+  </div>
+  <a  href="" class="headerText"  [routerLink]="['']">
+      <small class="headerText">Martial Arts Video Library</small>
+    </a>
+  
+             
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="my-2 my-lg-0 ml-auto">
+          <form (keydown)="keyDownFunction($event)">
+              <input class="mr-sm-2" type="search" placeholder="Search" aria-label="Search" (keyup)="onKey($event)">
+              <button class="btn btn-outline-success my-2 my-sm-0 nav-link-edit" (click)="runSearch()">Search</button>
+          </form>
+        
+        
+        
+      </div>
+    </div>
+  </nav>

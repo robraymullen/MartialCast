@@ -1,0 +1,16 @@
+.flex-fill {
+    flex:1;
+}
+
+.sideBarCustom{
+    background: rgb(27,27,27);
+background: linear-gradient(rgba(27,27,27,1) 0%, rgba(73,73,73,1) 49%, rgba(120,120,120,1) 100%);
+    border-right: 0.5px solid #28a745;
+}
+
+
+.videoGallery{
+    background: rgb(50,50,50);
+    background: linear-gradient(148deg, rgba(50,50,50,1) 0%, rgba(137,137,137,1) 33%, rgba(181,181,181,1) 100%);
+    color: #e7e7e7;
+}

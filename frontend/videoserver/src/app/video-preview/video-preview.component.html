@@ -1,0 +1,41 @@
+<div *ngIf="isVertical==false">
+    <div class="centerBlock float-left">
+      <a [routerLink]="'/video/'+video.id">
+        <h6 class="text-center">{{video.name}}</h6>
+       <video width="250" height="150" (mouseenter)="mouseEnter()" (mouseleave)="mouseLeave()" #videoPlayer>
+        <source src={{videoURL}}>
+          <p>Your browser doesn't support HTML5 video. Here is
+             a <a href="{{videoURL}}">link to the video</a> instead.</p>
+        </video>
+        <div class="horizontalPreviewText videoTextDetailBlock">
+          <p class="small text-justify">{{video.description}}</p>
+          <span class="small text-justify">{{video.postedAt.toUTCString()}}</span>
+        </div>
+      </a>
+    </div>
+</div>
+<div *ngIf="isVertical==true" class="verticalPreview">
+  
+    <div class="row">
+        <div class="col-sm text-center previewVideo">
+            <a [routerLink]="'/video/'+video.id">
+              <h6>{{video.name}}</h6>
+              <video width="250" height="150" (mouseenter)="mouseEnter()" (mouseleave)="mouseLeave()" #videoPlayer>
+                <source src={{videoURL}}>
+                  <p>Your browser doesn't support HTML5 video. Here is
+                     a <a href="{{videoURL}}">link to the video</a> instead.</p>
+              </video>
+            </a>
+        </div>
+        <div class="col-sm mx-auto">
+          <div class="verticalPreviewText">
+              <p class="small text-justify"><b>Description: </b>{{video.description}}</p>
+              <small class="small"><b>Posted On: </b>{{video.postedAt.toUTCString()}}</small><br>
+              <span *ngIf="video.instructors" class="small text-justify"><b>Instructors: </b></span>
+              <small *ngFor="let instructor of video.instructors" class="small text-justify"><a [routerLink]="'/instructor/'+instructor.name">{{instructor.name}} </a> </small>
+          </div>
+            
+        </div>
+    </div>
+  
+</div>

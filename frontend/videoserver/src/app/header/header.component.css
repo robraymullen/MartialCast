@@ -1,0 +1,13 @@
+#navIcon {
+    color : #28a745;
+}
+
+.navBarCustom{
+    background-color:#1a1a1a;
+    border-bottom: 4px solid #28a745;
+}
+
+.headerText{
+    color: #28a745;
+    text-decoration: none;
+}

@@ -1,0 +1,36 @@
+<div class="row" *ngIf="video$ | async as video">
+    <div class="col-sm">
+        <h3>{{ video.name }}</h3>
+        <div>
+            <video controls width="600" height="400" #videoPlayer>
+                <source src={{videoURL}}{{video.id}}>
+                  <p>Your browser doesn't support HTML5 video. Here is
+                     a <a href="{{videoURL}}{{video.id}}">link to the video</a> instead.</p>
+            </video>
+              <p class="large text-justify" *ngIf="video.description"><b>Description: </b> {{video.description}}</p>
+              <p class="small text-justify" *ngIf="video.styles"><b>Style: </b> 
+                <span *ngFor="let style of video.styles"> <a [routerLink]="'/style/'+style.name">{{style.name}}</a>,</span>
+              </p>
+              <p class="small text-justify" *ngIf="video.instructors"><b>Instructors:</b> 
+                <span *ngFor="let instructor of video.instructors"><a [routerLink]="'/instructor/'+instructor.name"> {{instructor.name}}</a>,</span>
+              </p>
+              <p class="small text-justify" *ngIf="video.collection"><b>Collection: </b> <a [routerLink]="'/collection/'+video.collection.name">{{video.collection.name}}</a>
+              </p>
+              <p class="small text-justify" *ngIf="video.tags"><b>Tags: </b> 
+                <span *ngFor="let tag of video.tags"> <a [routerLink]="'/tag/'+tag.name">{{tag.name}}</a>, </span>
+              </p>
+              <br/>
+              <div id="comments" *ngIf="video.comments.length">
+                <h5>Comments: </h5>
+                <div *ngFor="let comment of video.comments" class="comment">
+                  <p>{{comment.content}}</p>
+                  <p class="small">{{comment.postedAt}}</p>
+                </div>
+              </div>
+        </div>
+    </div>
+    <div class="col-sm">
+      <app-vertical-gallery [video]="video"></app-vertical-gallery>
+    </div>
+</div>
+

@@ -1,0 +1,29 @@
+<div class="py-2 sticky-top flex-grow-1">
+    <div class="nav flex-sm-column" id="sidebarLinks">
+        <div>
+            <h5 href="" class="nav-link sidebarLinks">Style</h5>
+            <ul>
+                    <li *ngFor="let style of styles">
+                    <a [routerLink]="'/style/'+style.name" class="sidebarLinks">{{style.name}}</a>
+                    </li>
+            </ul>
+            
+        </div>
+        <div>
+            <h5 class="nav-link sidebarLinks">Instructors</h5>
+            <ul>
+                <li *ngFor="let instructor of instructors">
+                <a [routerLink]="'/instructor/'+instructor.name" class="sidebarLinks">{{instructor.name}}</a>
+            </li>
+            </ul>
+        </div>
+        <div>
+            <h5 class="nav-link sidebarLinks">Collections</h5>
+            <ul>
+                <li *ngFor="let collection of collections">
+                <a [routerLink]="'/collection/'+collection.name" class="sidebarLinks">{{collection.name}}</a>
+            </li>
+            </ul>
+        </div>
+    </div>
+</div>
